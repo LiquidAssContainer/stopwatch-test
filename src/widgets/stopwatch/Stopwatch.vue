@@ -18,35 +18,35 @@ const handleRemove = () => onRemove(stopwatch.id);
 </script>
 
 <template>
-  <Card>
-    <CardSection>
-      <StopwatchTime :time="stopwatch.time" />
-    </CardSection>
+  <card>
+    <card-section>
+      <stopwatch-time :time="stopwatch.time" />
+    </card-section>
 
-    <CardSection>
+    <card-section>
       <div class="controls">
-        <IconButton
+        <icon-button
           v-if="stopwatch.isPaused"
           @click="handleTogglePause"
           label="Возобновить таймер"
         >
-          <IconContinue />
-        </IconButton>
+          <icon-continue />
+        </icon-button>
 
-        <IconButton
+        <icon-button
           v-else
           @click="handleTogglePause"
           label="Поставить таймер на паузу"
         >
-          <IconPause />
-        </IconButton>
+          <icon-pause />
+        </icon-button>
 
-        <IconButton @click="handleRemove" label="Остановить таймер">
-          <IconStop />
-        </IconButton>
+        <icon-button @click="handleRemove" label="Остановить таймер">
+          <icon-stop />
+        </icon-button>
       </div>
-    </CardSection>
-  </Card>
+    </card-section>
+  </card>
 </template>
 
 <style lang="sass" scoped>

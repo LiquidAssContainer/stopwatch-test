@@ -5,5 +5,5 @@ import './styles/main.sass';
 </script>
 
 <template>
-  <StopwatchesPage />
+  <stopwatches-page />
 </template>

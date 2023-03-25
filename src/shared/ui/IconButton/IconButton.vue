@@ -1,5 +1,5 @@
 <script setup>
-import { Button } from '../Button';
+import { Button as VButton } from '../Button';
 import { ControlIcon } from '../ControlIcon';
 
 const { label } = defineProps({
@@ -8,9 +8,9 @@ const { label } = defineProps({
 </script>
 
 <template>
-  <Button :aria-label="label">
-    <ControlIcon>
+  <v-button :aria-label="label">
+    <control-icon>
       <slot />
-    </ControlIcon>
-  </Button>
+    </control-icon>
+  </v-button>
 </template>

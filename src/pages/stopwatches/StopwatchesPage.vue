@@ -60,13 +60,13 @@ onBeforeUnmount(() => clearInterval(interval));
   <main class="main">
     <ul class="list">
       <li v-for="stopwatch in stopwatches" :key="stopwatch.id">
-        <Stopwatch
+        <stopwatch
           :stopwatch="stopwatch"
           :onTogglePause="onTogglePause"
           :onRemove="onRemove"
         />
       </li>
-      <AddStopwatchButton @click="onAdd" />
+      <add-stopwatch-button @click="onAdd" />
     </ul>
   </main>
 </template>

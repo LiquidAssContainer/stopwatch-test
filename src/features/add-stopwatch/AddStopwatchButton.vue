@@ -1,19 +1,19 @@
 <script setup>
 import { Card } from 'shared/ui/Card';
-import { Button } from 'shared/ui/Button';
+import { Button as VButton } from 'shared/ui/Button';
 import { ControlIcon } from 'shared/ui/ControlIcon';
 
 import { IconAdd } from './icons';
 </script>
 
 <template>
-  <Button>
-    <Card class="stopwatch__add_content">
-      <ControlIcon>
-        <IconAdd />
-      </ControlIcon>
-    </Card>
-  </Button>
+  <v-button>
+    <card class="stopwatch__add_content">
+      <control-icon>
+        <icon-add />
+      </control-icon>
+    </card>
+  </v-button>
 </template>
 
 <style lang="sass">
