@@ -8,5 +8,4 @@
 .card
   height: 120px
   background-color: #696969
-  color: #9e9e9e
 </style>

@@ -49,13 +49,12 @@ const handleRemove = () => onRemove(stopwatch.id);
   </Card>
 </template>
 
-<style lang="sass">
+<style lang="sass" scoped>
 $hover-color: #fff
 $transition: 0.25s all ease-in-out
 
-.card, .card svg, .card__section
+.card, .card svg, .card__section, .stopwatch__time
   transition: $transition
-  // transition-delay: 0
 
 .card:hover
   color: $hover-color
@@ -65,6 +64,9 @@ $transition: 0.25s all ease-in-out
 
   .card__section
     border-color: $hover-color
+
+  .stopwatch__time
+    color: $hover-color
 
 .controls
   display: flex

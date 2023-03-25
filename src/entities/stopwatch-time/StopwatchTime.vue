@@ -13,4 +13,5 @@ defineProps({
 <style lang="sass" scoped>
 .stopwatch__time
   font-size: 22px
+  color: #9e9e9e
 </style>
