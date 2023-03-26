@@ -39,6 +39,16 @@ const onRemove = (stopwatchId) => {
   }
 };
 
+const onStop = (stopwatchId) => {
+  const stopwatch = stopwatches.find(({ id }) => stopwatchId === id);
+  if (!stopwatch) return;
+
+  stopwatch.isPaused = true;
+  stopwatch.time = 0;
+  stopwatch.timestamp = Date.now();
+  stopwatch.pauseTimestamp = Date.now();
+};
+
 // сравниваются таймстампы, чтобы не было потери точности из-за setInterval
 const interval = setInterval(() => {
   for (const stopwatch of stopwatches) {
@@ -63,6 +73,7 @@ onBeforeUnmount(() => clearInterval(interval));
         <stopwatch
           :stopwatch="stopwatch"
           :onTogglePause="onTogglePause"
+          :onStop="onStop"
           :onRemove="onRemove"
         />
       </li>

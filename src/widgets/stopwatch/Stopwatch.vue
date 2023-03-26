@@ -3,10 +3,11 @@ import { StopwatchTime } from 'entities/stopwatch-time';
 import { Card, CardSection } from 'shared/ui/Card';
 import { IconButton } from 'shared/ui/IconButton';
 
-import { IconContinue, IconPause, IconStop } from './icons';
+import { IconContinue, IconPause, IconStop, IconRemove } from './icons';
 
-const { stopwatch, onRemove, onTogglePause } = defineProps({
+const { stopwatch, onStop, onRemove, onTogglePause } = defineProps({
   stopwatch: Object,
+  onStop: Function,
   onRemove: Function,
   onTogglePause: Function,
 });
@@ -15,12 +16,17 @@ const handleTogglePause = () =>
   onTogglePause(stopwatch.id, !stopwatch.isPaused);
 
 const handleRemove = () => onRemove(stopwatch.id);
+
+const handleStop = () => onStop(stopwatch.id);
 </script>
 
 <template>
   <card :class="{ active: !stopwatch.isPaused }">
     <card-section>
       <stopwatch-time :time="stopwatch.time" />
+      <icon-button class="remove-button" @click="handleRemove">
+        <icon-remove />
+      </icon-button>
     </card-section>
 
     <card-section>
@@ -41,7 +47,7 @@ const handleRemove = () => onRemove(stopwatch.id);
           <icon-pause />
         </icon-button>
 
-        <icon-button @click="handleRemove" label="Остановить таймер">
+        <icon-button @click="handleStop" label="Остановить таймер">
           <icon-stop />
         </icon-button>
       </div>
@@ -53,8 +59,25 @@ const handleRemove = () => onRemove(stopwatch.id);
 $hover-color: #fff
 $transition: 0.25s all ease-in-out
 
-.card, .card svg, .card__section, .stopwatch__time
+.card, .card svg, .card__section, .stopwatch__time, .remove-button
   transition: $transition
+
+.card__section
+  position: relative
+
+.remove-button
+  position: absolute
+  top: 8px
+  right: 8px
+
+  opacity: 0
+
+  :deep(.icon__wrapper)
+    width: 14px
+    height: 14px
+
+.card:hover .remove-button
+  opacity: 1
 
 .card:hover, .card.active
   color: $hover-color

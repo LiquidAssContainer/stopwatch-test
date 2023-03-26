@@ -1,11 +1,11 @@
 <template>
-  <div class="wrapper">
+  <div class="icon__wrapper">
     <slot />
   </div>
 </template>
 
 <style lang="sass" scoped>
-.wrapper
+.icon__wrapper
   width: 20px
   height: 20px
 
