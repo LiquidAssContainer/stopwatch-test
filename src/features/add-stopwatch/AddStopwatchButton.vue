@@ -16,7 +16,7 @@ import { IconAdd } from './icons';
   </v-button>
 </template>
 
-<style lang="sass">
+<style lang="sass" scoped>
 $hover-color: #fff
 $transition: 0.25s all ease-in-out
 
