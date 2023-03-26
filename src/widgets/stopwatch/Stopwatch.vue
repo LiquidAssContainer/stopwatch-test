@@ -18,7 +18,7 @@ const handleRemove = () => onRemove(stopwatch.id);
 </script>
 
 <template>
-  <card>
+  <card :class="{ active: !stopwatch.isPaused }">
     <card-section>
       <stopwatch-time :time="stopwatch.time" />
     </card-section>
@@ -56,7 +56,7 @@ $transition: 0.25s all ease-in-out
 .card, .card svg, .card__section, .stopwatch__time
   transition: $transition
 
-.card:hover
+.card:hover, .card.active
   color: $hover-color
 
   svg
