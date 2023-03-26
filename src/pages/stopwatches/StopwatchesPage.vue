@@ -12,6 +12,7 @@ const onAdd = () => {
     id: nanoid(),
     time: 0,
     timestamp: Date.now(),
+    pauseTimestamp: Date.now(),
     isPaused: true,
   });
 };
