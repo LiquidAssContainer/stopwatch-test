@@ -1,8 +1,8 @@
-[![Build status](https://ci.appveyor.com/api/projects/status/2xlois4uu10mv5ab?svg=true)](https://ci.appveyor.com/project/LiquidAssContainer/stopwatch-test)
+[![Build status](https://ci.appveyor.com/api/projects/status/2xlois4uu10mv5ab?svg=true)](https://ci.appveyor.com/project/LiquidAssContainer/stopwatch-test-task)
 
-# Stopwatches Test Task
+# Stopwatch Test Task
 
-[GitHub Pages](https://liquidasscontainer.github.io/stopwatch-test/)
+[GitHub Pages](https://liquidasscontainer.github.io/stopwatch-test-task/)
 
 Тестовое задание с созданием секундомеров, сделанное на Vue 3.
 
@@ -33,6 +33,4 @@
 
 ### Соответствие ТЗ
 
-По ТЗ и макету предполагается кнопка для остановки секундомера, но нет кнопки удаления. Я решил использовать кнопку остановки в качестве кнопки удаления. Возможно, предполагается именно обнулить прошедшее время, но функция удаления тоже полезна (как вариант, её можно сделать дополнительной кнопкой). В реальном проекте я бы уточнил этот момент.
-
-UPD: Реализовал функцию остановки и добавил отдельную кнопку для удаления.
+По ТЗ и макету не предполагается кнопка для удаления секундомера, но я её добавил, т. к. она напрашивалась.
