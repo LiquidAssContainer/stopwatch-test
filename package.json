@@ -1,12 +1,12 @@
 {
-  "name": "stopwatch-test",
-  "version": "0.1.0",
+  "name": "stopwatch-test-task",
+  "version": "1.0.0",
   "description": "Vue test task with stopwatch list",
   "author": "Lex",
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/LiquidAssContainer/stopwatch-test.git"
+    "url": "git+https://github.com/LiquidAssContainer/stopwatch-test-task.git"
   },
   "scripts": {
     "dev": "vite",
