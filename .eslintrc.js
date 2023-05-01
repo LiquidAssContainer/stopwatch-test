@@ -1,6 +1,7 @@
 module.exports = {
   root: true,
   env: { browser: true, es2022: true, node: true },
+  plugins: ['vue', 'prettier', 'import-helpers'],
   extends: [
     'eslint:recommended',
     'plugin:vue/vue3-recommended',
@@ -16,7 +17,6 @@ module.exports = {
       jsx: true,
     },
   },
-  plugins: ['vue', 'prettier'],
   rules: {
     'prettier/prettier': [
       'error',
@@ -28,5 +28,24 @@ module.exports = {
       },
     ],
     'no-unused-vars': 'off',
+    'import-helpers/order-imports': [
+      'warn',
+      {
+        newlinesBetween: 'always',
+        groups: [
+          'module',
+          '/^pages/',
+          '/^widgets/',
+          '/^features/',
+          '/^entities/',
+          '/^shared/',
+          ['parent', 'sibling', 'index'],
+        ],
+        alphabetize: {
+          order: 'ignore',
+          ignoreCase: true,
+        },
+      },
+    ],
   },
 };
