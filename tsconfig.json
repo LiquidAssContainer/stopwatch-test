@@ -1,0 +1,19 @@
+{
+  "compilerOptions": {
+    "baseUrl": "./src",
+    "isolatedModules": false,
+    "outDir": "./dist/",
+    "sourceMap": true,
+    "strict": true,
+    "allowSyntheticDefaultImports": true,
+    "noImplicitReturns": true,
+    "noImplicitAny": true,
+    "module": "esnext",
+    "moduleResolution": "node",
+    "lib": ["es2022", "DOM"],
+    "target": "es5",
+    "allowJs": true,
+    "resolveJsonModule": true
+  },
+  "include": ["src"]
+}
