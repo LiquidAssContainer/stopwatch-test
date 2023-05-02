@@ -1,9 +1,9 @@
-const getTwoDigitsFormat = (time) => {
+const getTwoDigitsFormat = (time: number) => {
   return time > 9 ? `${time}` : `0${time}`;
 };
 
 // не самая красивая функция, но задачу выполняет
-export const formatTime = (time) => {
+export const formatTime = (time: number) => {
   let seconds, minutes, hours;
 
   if (time < 60) {

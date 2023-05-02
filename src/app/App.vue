@@ -1,7 +1,7 @@
-<script setup>
+<script setup lang="ts">
 import { StopwatchesPage } from 'pages/stopwatches';
 
-import './styles/main.sass';
+import './styles/main.scss';
 </script>
 
 <template>

@@ -15,6 +15,7 @@
     "lint": "eslint . --ext .vue,.js,.ts src",
     "lint:fix": "eslint . --ext .vue,.js,.ts src --fix",
     "lint:style": "stylelint \"src/**/*.{vue,scss}\"",
+    "lint:style:fix": "stylelint \"src/**/*.{vue,scss}\" --fix",
     "typecheck": "vue-tsc --noEmit"
   },
   "browserslist": {

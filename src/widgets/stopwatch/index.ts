@@ -1,1 +1,1 @@
-export { default as Stopwatch } from './Stopwatch.vue';
+export { default as StopwatchItem } from './StopwatchItem.vue';

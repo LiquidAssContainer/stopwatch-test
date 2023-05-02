@@ -20,5 +20,6 @@ module.exports = {
     'no-empty-first-line': null,
     'no-empty-source': null,
     'selector-class-pattern': null,
+    'custom-property-empty-line-before': 'never',
   },
 };

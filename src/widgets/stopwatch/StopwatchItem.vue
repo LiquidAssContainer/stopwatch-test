@@ -1,30 +1,36 @@
-<script setup>
+<script setup lang="ts">
 import { StopwatchTime } from 'entities/stopwatch-time';
-import { Card, CardSection } from 'shared/ui/Card';
-import { IconButton } from 'shared/ui/IconButton';
+
+import { CardItem, CardSection } from 'shared/ui/components/CardItem';
+import { IconButton } from 'shared/ui/components/IconButton';
 
 import { IconContinue, IconPause, IconStop, IconRemove } from './icons';
 
-const { stopwatch, onStop, onRemove, onTogglePause } = defineProps({
-  stopwatch: Object,
-  onStop: Function,
-  onRemove: Function,
-  onTogglePause: Function,
-});
+interface Props {
+  id: string;
+  time: number;
+  isPaused: boolean;
+}
 
-const handleTogglePause = () =>
-  onTogglePause(stopwatch.id, !stopwatch.isPaused);
+interface Emits {
+  (e: 'stop', id: string): void;
+  (e: 'remove', id: string): void;
+  (e: 'toggle-pause', id: string, value: boolean): void;
+}
 
-const handleRemove = () => onRemove(stopwatch.id);
-
-const handleStop = () => onStop(stopwatch.id);
+defineProps<Props>();
+defineEmits<Emits>();
 </script>
 
 <template>
-  <card :class="{ active: !stopwatch.isPaused }">
+  <card-item :class="{ active: !isPaused }">
     <card-section>
-      <stopwatch-time :time="stopwatch.time" />
-      <icon-button class="remove-button" @click="handleRemove">
+      <stopwatch-time :time="time" />
+      <icon-button
+        class="remove-button"
+        label="Удалить таймер"
+        @click="$emit('remove', id)"
+      >
         <icon-remove />
       </icon-button>
     </card-section>
@@ -32,66 +38,72 @@ const handleStop = () => onStop(stopwatch.id);
     <card-section>
       <div class="controls">
         <icon-button
-          v-if="stopwatch.isPaused"
-          @click="handleTogglePause"
-          label="Возобновить таймер"
+          :label="isPaused ? 'Возобновить таймер' : 'Поставить таймер на паузу'"
+          @click="$emit('toggle-pause', id, !isPaused)"
         >
-          <icon-continue />
+          <icon-continue v-if="isPaused" />
+          <icon-pause v-else />
         </icon-button>
 
-        <icon-button
-          v-else
-          @click="handleTogglePause"
-          label="Поставить таймер на паузу"
-        >
-          <icon-pause />
-        </icon-button>
-
-        <icon-button @click="handleStop" label="Остановить таймер">
+        <icon-button label="Остановить таймер" @click="$emit('stop', id)">
           <icon-stop />
         </icon-button>
       </div>
     </card-section>
-  </card>
+  </card-item>
 </template>
 
-<style lang="sass" scoped>
-$hover-color: #fff
-$transition: 0.25s all ease-in-out
+<style scoped lang="scss">
+$hover-color: #fff;
+$transition: 0.25s all ease-in-out;
 
-.card, .card svg, .card__section, .stopwatch__time, .remove-button
-  transition: $transition
+.card-item,
+.card-item svg,
+.card__section,
+.stopwatch-time,
+.remove-button {
+  transition: $transition;
+}
 
-.card__section
-  position: relative
+.card__section {
+  position: relative;
+}
 
-.remove-button
-  position: absolute
-  top: 8px
-  right: 8px
+.remove-button {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  opacity: 0;
 
-  opacity: 0
+  :deep(.icon__wrapper) {
+    width: 14px;
+    height: 14px;
+  }
+}
 
-  :deep(.icon__wrapper)
-    width: 14px
-    height: 14px
+.card-item:hover .remove-button {
+  opacity: 1;
+}
 
-.card:hover .remove-button
-  opacity: 1
+.card-item:hover,
+.card-item.active {
+  color: $hover-color;
 
-.card:hover, .card.active
-  color: $hover-color
+  svg {
+    fill: $hover-color;
+  }
 
-  svg
-    fill: $hover-color
+  .card__section {
+    border-color: $hover-color;
+  }
 
-  .card__section
-    border-color: $hover-color
+  .stopwatch-time {
+    color: $hover-color;
+  }
+}
 
-  .stopwatch__time
-    color: $hover-color
-
-.controls
-  display: flex
-  gap: 48px
+.controls {
+  display: flex;
+  gap: 48px;
+}
 </style>

@@ -1,17 +1,22 @@
-<script setup>
+<script setup lang="ts">
 import { formatTime } from './lib';
 
-defineProps({
-  time: Number,
-});
+interface Props {
+  time: number;
+}
+
+defineProps<Props>();
 </script>
 
 <template>
-  <div class="stopwatch__time">{{ formatTime(time) }}</div>
+  <div class="stopwatch-time">
+    {{ formatTime(time) }}
+  </div>
 </template>
 
-<style lang="sass" scoped>
-.stopwatch__time
-  font-size: 22px
-  color: #9e9e9e
+<style scoped lang="scss">
+.stopwatch-time {
+  font-size: 2.2rem;
+  color: $color-typo-primary;
+}
 </style>
