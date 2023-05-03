@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { onMounted, ref, watch } from 'vue';
 
-const theme = ref('os');
+const theme = ref('system');
 
 watch(theme, () => {
   localStorage.setItem('theme', theme.value);
