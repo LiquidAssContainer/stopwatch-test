@@ -14,6 +14,6 @@
   display: block;
   width: 100%;
   max-height: 100%;
-  fill: $color-typo-primary;
+  fill: var(--color-typo-primary);
 }
 </style>

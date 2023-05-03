@@ -4,7 +4,12 @@ import { StopwatchTime } from 'entities/stopwatch-time';
 import { CardItem, CardSection } from 'shared/ui/components/CardItem';
 import { IconButton } from 'shared/ui/components/IconButton';
 
-import { IconContinue, IconPause, IconStop, IconRemove } from './icons';
+import IconContinue from './icons/continue.svg';
+import IconPause from './icons/pause.svg';
+import IconStop from './icons/stop.svg';
+import IconRemove from './icons/remove.svg';
+
+// import { IconContinue, IconPause, IconStop, IconRemove } from './icons';
 
 interface Props {
   id: string;
@@ -54,7 +59,7 @@ defineEmits<Emits>();
 </template>
 
 <style scoped lang="scss">
-$hover-color: #fff;
+$hover-color: var(--color-typo-hover);
 $transition: 0.25s all ease-in-out;
 
 .card-item,

@@ -1,0 +1,17 @@
+@mixin light-theme {
+  --color-typo-primary: #777;
+  --color-typo-secondary: #777;
+  --color-typo-hover: #439cff;
+  --color-bg-primary: #fff;
+  --color-bg-secondary: #ebebeb;
+  --color-border-select: #777;
+}
+
+@mixin dark-theme {
+  --color-typo-primary: var(--grey-1);
+  --color-typo-secondary: var(--white-1);
+  --color-typo-hover: var(--white-1);
+  --color-bg-primary: var(--grey-3);
+  --color-bg-secondary: var(--grey-2);
+  --color-border-select: var(--white-1);
+}

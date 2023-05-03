@@ -12,7 +12,7 @@
   align-items: center;
 
   &:nth-child(n + 2) {
-    border-top: 1px solid $color-typo-primary;
+    border-top: 1px solid var(--color-typo-primary);
   }
 }
 </style>

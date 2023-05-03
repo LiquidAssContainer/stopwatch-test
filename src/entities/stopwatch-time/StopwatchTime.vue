@@ -17,6 +17,6 @@ defineProps<Props>();
 <style scoped lang="scss">
 .stopwatch-time {
   font-size: 2.2rem;
-  color: $color-typo-primary;
+  color: var(--color-typo-primary);
 }
 </style>

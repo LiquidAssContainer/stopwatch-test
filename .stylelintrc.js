@@ -21,5 +21,6 @@ module.exports = {
     'no-empty-source': null,
     'selector-class-pattern': null,
     'custom-property-empty-line-before': 'never',
+    'media-feature-range-notation': 'prefix',
   },
 };

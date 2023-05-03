@@ -7,6 +7,10 @@
   <link rel="mask-icon" href="/mask-icon.svg" color="#276eef" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no" />
   <title>Stopwatch Creator</title>
+  <script async>
+    const theme = localStorage.getItem('theme');
+    document.documentElement.dataset.theme = theme || 'dark';
+  </script>
 </head>
 
 <body>

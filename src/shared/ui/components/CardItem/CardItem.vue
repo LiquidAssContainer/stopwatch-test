@@ -7,6 +7,6 @@
 <style scoped lang="scss">
 .card-item {
   height: 120px;
-  background-color: $color-bg-secondary;
+  background-color: var(--color-bg-secondary);
 }
 </style>

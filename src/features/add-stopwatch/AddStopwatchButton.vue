@@ -3,21 +3,20 @@ import { VButton } from 'shared/ui/components/VButton';
 import { CardItem } from 'shared/ui/components/CardItem';
 import { ControlIcon } from 'shared/ui/components/ControlIcon';
 
-import { IconAdd } from './icons';
+import IconPlus from './icons/plus.svg';
 </script>
 
 <template>
   <v-button>
     <card-item class="stopwatch__add_content">
       <control-icon>
-        <icon-add />
+        <icon-plus />
       </control-icon>
     </card-item>
   </v-button>
 </template>
 
 <style scoped lang="scss">
-$hover-color: #fff;
 $transition: 0.25s all ease-in-out;
 
 .stopwatch__add_content {
@@ -30,7 +29,7 @@ $transition: 0.25s all ease-in-out;
   }
 
   &:hover svg {
-    fill: $hover-color;
+    fill: var(--color-typo-hover);
   }
 }
 </style>

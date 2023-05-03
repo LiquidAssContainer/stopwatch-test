@@ -4,6 +4,7 @@ import { reactive, onBeforeUnmount } from 'vue';
 import { StopwatchItem } from 'widgets/stopwatch';
 
 import { AddStopwatchButton } from 'features/add-stopwatch';
+import { ColorSchemeSelect } from 'features/change-color-scheme';
 
 import { Stopwatch } from 'entities/stopwatch/model';
 
@@ -45,6 +46,7 @@ onBeforeUnmount(() => clearInterval(interval));
 
 <template>
   <main class="main">
+    <ColorSchemeSelect />
     <ul class="list">
       <li v-for="stopwatch in stopwatches" :key="stopwatch.id">
         <stopwatch-item
@@ -67,7 +69,14 @@ $card-width: min(225px, 100%);
 }
 
 .main {
+  position: relative;
   padding: 72px 10px;
+}
+
+.color-scheme-select {
+  position: absolute;
+  top: 10px;
+  right: 10px;
 }
 
 .list {
@@ -75,15 +84,15 @@ $card-width: min(225px, 100%);
   justify-content: center;
   gap: 45px 50px;
 
-  @media (width >= 1024px) {
+  @media (min-width: 1024px) {
     @include grid-cols(3);
   }
 
-  @media (width >= 768px) and (width <= 1023px) {
+  @media (min-width: 768px) and (max-width: 1023px) {
     @include grid-cols(2);
   }
 
-  @media (width <= 767px) {
+  @media (max-width: 767px) {
     @include grid-cols(1);
   }
 }
