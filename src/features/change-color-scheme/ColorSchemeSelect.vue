@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { onMounted, ref, watch } from 'vue';
 
-const theme = ref('system');
+const theme = ref('dark');
 
 watch(theme, () => {
   localStorage.setItem('theme', theme.value);

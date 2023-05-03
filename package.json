@@ -1,6 +1,6 @@
 {
   "name": "stopwatch-test-task",
-  "version": "1.1.0-alpha",
+  "version": "1.1.0",
   "description": "Vue test task with stopwatch list",
   "author": "Lex",
   "license": "MIT",
